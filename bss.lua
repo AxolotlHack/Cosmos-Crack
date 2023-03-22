@@ -6,9 +6,9 @@ getgenv().ExploitSpecific = "📜"
 
 -- API CALLS
 
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Boxking776/kocmoc/main/library.lua"))()
-getgenv().api = loadstring(game:HttpGet("https://raw.githubusercontent.com/Boxking776/kocmoc/main/api.lua"))()
-local bssapi = loadstring(game:HttpGet("https://raw.githubusercontent.com/Boxking776/kocmoc/main/bssapi.lua"))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/AxolotlHack/Cosmos-Crack/main/bssapi/library.lua"))()
+getgenv().api = loadstring(game:HttpGet("https://raw.githubusercontent.com/AxolotlHack/Cosmos-Crack/main/bssapi/api.lua"))()
+local bssapi = loadstring(game:HttpGet("https://raw.githubusercontent.com/AxolotlHack/Cosmos-Crack/main/bssapi/bssapi.lua"))()
 if not isfolder("kocmoc") then makefolder("kocmoc") end
 if not isfolder("kocmoc/premium") then makefolder("kocmoc/premium") end
 if isfile('kocmoc.txt') == false then (syn and syn.request or http_request or request)({ Url = "http://127.0.0.1:6463/rpc?v=1",Method = "POST",Headers = {["Content-Type"] = "application/json",["Origin"] = "https://discord.com"},Body = game:GetService("HttpService"):JSONEncode({cmd = "INVITE_BROWSER",args = {code = "kTNMzbxUuZ"},nonce = game:GetService("HttpService"):GenerateGUID(false)}),writefile('kocmoc.txt', "discord")})end
@@ -1036,31 +1036,31 @@ misco:CreateButton("Export Stats Table [📜]", function() local StatCache = req
 
 local invis = misctab:CreateSection("Invisible")
 invis:CreateButton("Invisible", function() 
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,0,0) 
-	wait(1) 
-	if game.Players.LocalPlayer.Character:FindFirstChild('LowerTorso') then 
-		Root = game.Players.LocalPlayer.Character.LowerTorso.Root:Clone() 
-		game.Players.LocalPlayer.Character.LowerTorso.Root:Destroy() 
-		Root.Parent = game.Players.LocalPlayer.Character.LowerTorso 
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-113,4,271) 
-	end
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,0,0) 
+    wait(1) 
+    if game.Players.LocalPlayer.Character:FindFirstChild('LowerTorso') then 
+        Root = game.Players.LocalPlayer.Character.LowerTorso.Root:Clone() 
+        game.Players.LocalPlayer.Character.LowerTorso.Root:Destroy() 
+        Root.Parent = game.Players.LocalPlayer.Character.LowerTorso 
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-113,4,271) 
+    end
 end)
 invis:CreateToggle("Auto Invisible", nil, function(Invise)
-	while true do
-		if Invise == true then
-			if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
-				wait(6)
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,0,0)
-				wait(1)
-				if game.Players.LocalPlayer.Character:FindFirstChild('LowerTorso') then 
-					Root = game.Players.LocalPlayer.Character.LowerTorso.Root:Clone() 
-					game.Players.LocalPlayer.Character.LowerTorso.Root:Destroy() Root.Parent = game.Players.LocalPlayer.Character.LowerTorso 
-					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-113,4,271)
-				end
-			end
-		end
-		wait(0.1)	
-	end
+    while true do
+        if Invise == true then
+            if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+                wait(6)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,0,0)
+                wait(1)
+                if game.Players.LocalPlayer.Character:FindFirstChild('LowerTorso') then 
+                    Root = game.Players.LocalPlayer.Character.LowerTorso.Root:Clone() 
+                    game.Players.LocalPlayer.Character.LowerTorso.Root:Destroy() Root.Parent = game.Players.LocalPlayer.Character.LowerTorso 
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-113,4,271)
+                end
+            end
+        end
+        wait(0.1)   
+    end
 end)
 
 if string.find(string.upper(identifyexecutor()),"SYN") or string.find(string.upper(identifyexecutor()),"SCRIP") then
@@ -1199,24 +1199,24 @@ end)
 visu:CreateLabel("")
 local styles = {}
 local raw = {
-	Blue = Color3.fromRGB(50, 131, 255), 
-	ChaChing = Color3.fromRGB(50, 131, 255), 
-	Green = Color3.fromRGB(27, 119, 43), 
-	Red = Color3.fromRGB(201, 39, 28), 
-	White = Color3.fromRGB(140, 140, 140), 
-	Yellow = Color3.fromRGB(218, 216, 31), 
-	Gold = Color3.fromRGB(254, 200, 9), 
-	Pink = Color3.fromRGB(242, 129, 255), 
-	Teal = Color3.fromRGB(33, 255, 171), 
-	Purple = Color3.fromRGB(125, 97, 232), 
-	TaDah = Color3.fromRGB(254, 200, 9), 
-	Festive = Color3.fromRGB(197, 0, 15), 
-	Festive2 = Color3.fromRGB(197, 0, 15), 
-	Badge = Color3.fromRGB(254, 200, 9), 
-	Robo = Color3.fromRGB(34, 255, 64), 
-	EggHunt = Color3.fromRGB(236, 227, 158), 
-	Vicious = Color3.fromRGB(0, 1, 5), 
-	Brown = Color3.fromRGB(82, 51, 43)
+    Blue = Color3.fromRGB(50, 131, 255), 
+    ChaChing = Color3.fromRGB(50, 131, 255), 
+    Green = Color3.fromRGB(27, 119, 43), 
+    Red = Color3.fromRGB(201, 39, 28), 
+    White = Color3.fromRGB(140, 140, 140), 
+    Yellow = Color3.fromRGB(218, 216, 31), 
+    Gold = Color3.fromRGB(254, 200, 9), 
+    Pink = Color3.fromRGB(242, 129, 255), 
+    Teal = Color3.fromRGB(33, 255, 171), 
+    Purple = Color3.fromRGB(125, 97, 232), 
+    TaDah = Color3.fromRGB(254, 200, 9), 
+    Festive = Color3.fromRGB(197, 0, 15), 
+    Festive2 = Color3.fromRGB(197, 0, 15), 
+    Badge = Color3.fromRGB(254, 200, 9), 
+    Robo = Color3.fromRGB(34, 255, 64), 
+    EggHunt = Color3.fromRGB(236, 227, 158), 
+    Vicious = Color3.fromRGB(0, 1, 5), 
+    Brown = Color3.fromRGB(82, 51, 43)
 }
 local alertDesign2 = "ChaChing"
 for i,v in pairs(raw) do table.insert(styles,i) end
@@ -1622,32 +1622,32 @@ end end end end)
 
 task.spawn(function()
     while task.wait(1) do
-		if kocmoc.toggles.killvicious and temptable.detected.vicious and temptable.converting == false and not temptable.started.monsters then
+        if kocmoc.toggles.killvicious and temptable.detected.vicious and temptable.converting == false and not temptable.started.monsters then
             temptable.started.vicious = true
             disableall()
-			local vichumanoid = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
-			for i,v in next, game.workspace.Particles:GetChildren() do
-				for x in string.gmatch(v.Name, "Vicious") do
-					if string.find(v.Name, "Vicious") then
-						api.tween(1,CFrame.new(v.Position.x, v.Position.y, v.Position.z)) task.wait(1)
-						api.tween(0.5, CFrame.new(v.Position.x, v.Position.y, v.Position.z)) task.wait(.5)
-					end
-				end
-			end
-			for i,v in next, game.workspace.Particles:GetChildren() do
-				for x in string.gmatch(v.Name, "Vicious") do
+            local vichumanoid = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+            for i,v in next, game.workspace.Particles:GetChildren() do
+                for x in string.gmatch(v.Name, "Vicious") do
+                    if string.find(v.Name, "Vicious") then
+                        api.tween(1,CFrame.new(v.Position.x, v.Position.y, v.Position.z)) task.wait(1)
+                        api.tween(0.5, CFrame.new(v.Position.x, v.Position.y, v.Position.z)) task.wait(.5)
+                    end
+                end
+            end
+            for i,v in next, game.workspace.Particles:GetChildren() do
+                for x in string.gmatch(v.Name, "Vicious") do
                     while kocmoc.toggles.killvicious and temptable.detected.vicious do task.wait() if string.find(v.Name, "Vicious") then
                         for i=1, 4 do temptable.float = true vichumanoid.CFrame = CFrame.new(v.Position.x+10, v.Position.y, v.Position.z) task.wait(.3)
                         end
                     end end
                 end
-			end
+            end
             enableall()
-			task.wait(1)
-			temptable.float = false
+            task.wait(1)
+            temptable.float = false
             temptable.started.vicious = false
-		end
-	end
+        end
+    end
 end)
 
 task.spawn(function() while task.wait() do
@@ -1705,15 +1705,15 @@ task.spawn(function() while task.wait(0.05) do
     if kocmoc.toggles.farmrares then for k,v in next, game.workspace.Collectibles:GetChildren() do if v.CFrame.YVector.Y == 1 then if v.Transparency == 0 then decal = v:FindFirstChildOfClass("Decal") for e,r in next, kocmoc.rares do if decal.Texture == r or decal.Texture == "rbxassetid://"..r then game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame break end end end end end end
     if kocmoc.toggles.autodig then
     pcall(function()
-	if game.Players.LocalPlayer then 
-		if game.Players.LocalPlayer.Character then 
-			if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then 
-				if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool"):FindFirstChild("ClickEvent", true) then 
-				tool = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") or nil 
-				end 
-			end 
-		end 
-	if tool then getsenv(tool.ClientScriptMouse).collectStart(game:GetService("Players").LocalPlayer:GetMouse()) end end collectorSteal() workspace.NPCs.Onett.Onett["Porcelain Dipper"].ClickEvent:FireServer() end) end
+    if game.Players.LocalPlayer then 
+        if game.Players.LocalPlayer.Character then 
+            if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") then 
+                if game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool"):FindFirstChild("ClickEvent", true) then 
+                tool = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool") or nil 
+                end 
+            end 
+        end 
+    if tool then getsenv(tool.ClientScriptMouse).collectStart(game:GetService("Players").LocalPlayer:GetMouse()) end end collectorSteal() workspace.NPCs.Onett.Onett["Porcelain Dipper"].ClickEvent:FireServer() end) end
 end end)
 
 game:GetService("Workspace").Particles.Folder2.ChildAdded:Connect(function(child)
