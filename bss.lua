@@ -1049,7 +1049,7 @@ invis:CreateToggle("Auto Invisible", nil, function(Invise)
 	while true do
 		if Invise == true then
 			if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
-				wait(1)
+				wait(6)
 				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,0,0)
 				wait(1)
 				if game.Players.LocalPlayer.Character:FindFirstChild('LowerTorso') then 
