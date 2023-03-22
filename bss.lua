@@ -875,13 +875,14 @@ local combtab = Window:CreateTab("Combat")
 local itemstab = Window:CreateTab("Items")
 local misctab = Window:CreateTab("Misc")
 local setttab = Window:CreateTab("Settings")
+local premtab = Window:CreateTab("⭐Premium")
 
 local loadingInfo = hometab:CreateSection("Startup")
 local loadingFunctions = loadingInfo:CreateLabel("Loading Functions..")
 wait(1)
 loadingFunctions:UpdateText("Loaded Functions")
 local loadingBackend = loadingInfo:CreateLabel("Loading Backend..")
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Boxking776/kocmoc/main/functions/premium/loadperks.lua"))()
+--[[loadstring(game:HttpGet("https://raw.githubusercontent.com/Boxking776/kocmoc/main/functions/premium/loadperks.lua"))()
 if getgenv().LoadPremium then
 getgenv().LoadPremium("WindowLoad",Window)
 --temporary sh patch
@@ -897,9 +898,8 @@ writefile("PrevServers2.txt",s)
 --end temp patch
 else
     warn("Error loading Kocmoc Premium")
-end
+end]]
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/Boxking776/kocmoc/main/functions/premium/loadperks.lua"))()("WindowLoad",Window)
-
 
 
 --loadPremium("WindowLoad",Window)
@@ -1034,7 +1034,9 @@ misco:CreateDropdown("Equip Collectors", collectorstable, function(Option) local
 misco:CreateDropdown("Generate Amulet", {"Supreme Star Amulet", "Diamond Star Amulet", "Gold Star Amulet","Silver Star Amulet","Bronze Star Amulet","Moon Amulet"}, function(Option) local A_1 = Option.." Generator" local Event = game:GetService("ReplicatedStorage").Events.ToyEvent Event:FireServer(A_1) end)
 misco:CreateButton("Export Stats Table [📜]", function() local StatCache = require(game.ReplicatedStorage.ClientStatCache)writefile("Stats_"..api.nickname..".json", StatCache:Encode()) end)
 
-local invis = misctab:CreateSection("Invisible")
+
+-- Premium Tab 🌟⭐
+local invis = premtab:CreateSection("Invisible")
 invis:CreateButton("Invisible", function() 
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,0,0) 
     wait(1) 
