@@ -261,6 +261,7 @@ getgenv().kocmoc = {
         farmrares = false,
         rgbui = false,
         farmflower = false,
+        farmtickets = false,
         farmfuzzy = false,
         farmcoco = false,
         farmflame = false,
@@ -308,6 +309,7 @@ getgenv().kocmoc = {
         honeymaskconv = false,
         resetbeeenergy = false,
         enablestatuspanel = false,
+        autoinvise = false,
     },
     vars = {
         field = "Ant Field",
@@ -449,6 +451,24 @@ function killmobs()
                 for i = 1, 4 do gettoken(monsterpart.Position) end
             end
         end
+    end
+end
+
+function autoinvis()
+    while true do
+        if kocmoc.toggles.autoinvise == true then
+            if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+                wait(6)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,0,0)
+                wait(1)
+                if game.Players.LocalPlayer.Character:FindFirstChild('LowerTorso') then 
+                    Root = game.Players.LocalPlayer.Character.LowerTorso.Root:Clone() 
+                    game.Players.LocalPlayer.Character.LowerTorso.Root:Destroy() Root.Parent = game.Players.LocalPlayer.Character.LowerTorso 
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-113,4,271)
+                end
+            end
+        end
+        wait(0.1)   
     end
 end
 
@@ -915,7 +935,7 @@ information:CreateLabel(" - Not Safe Function")
 information:CreateLabel("⚙ - Configurable Function")
 information:CreateLabel("📜 - May be exploit specific")
 information:CreateLabel("Place version: "..game.PlaceVersion)
-information:CreateLabel("Script by Boxking776 and Schervi")
+information:CreateLabel("Script by AxolotlHack")
 information:CreateLabel("Originally by weuz_ and mrdevl")
 local gainedhoneylabel = information:CreateLabel("Gained Honey: 0")
 information:CreateButton("Discord Invite", function() setclipboard("https://discord.gg/jjsploit") end)
@@ -1047,23 +1067,7 @@ invis:CreateButton("Invisible", function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-113,4,271) 
     end
 end)
-invis:CreateToggle("Auto Invisible", nil, function(Invise)
-    while true do
-        if Invise == true then
-            if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
-                wait(6)
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,0,0)
-                wait(1)
-                if game.Players.LocalPlayer.Character:FindFirstChild('LowerTorso') then 
-                    Root = game.Players.LocalPlayer.Character.LowerTorso.Root:Clone() 
-                    game.Players.LocalPlayer.Character.LowerTorso.Root:Destroy() Root.Parent = game.Players.LocalPlayer.Character.LowerTorso 
-                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-113,4,271)
-                end
-            end
-        end
-        wait(0.1)   
-    end
-end)
+invis:CreateToggle("Auto Invisible", nil, function(State) kocmoc.toggles.autoinvise = State autoinvis() end)
 
 if string.find(string.upper(identifyexecutor()),"SYN") or string.find(string.upper(identifyexecutor()),"SCRIP") then
 local visu = misctab:CreateSection("Visual")
